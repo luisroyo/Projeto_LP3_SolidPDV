@@ -1,7 +1,8 @@
 module ifsp.projeto.lp3 {
     requires javafx.controls;
     requires javafx.fxml;
-    
+    requires java.sql;
+
 
     opens ifsp.projeto.lp3 to javafx.fxml;   
     exports ifsp.projeto.lp3;

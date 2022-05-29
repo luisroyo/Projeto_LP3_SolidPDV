@@ -2,6 +2,9 @@ package ifsp.projeto.lp3.controller;
 
 import ifsp.projeto.lp3.App;
 import ifsp.projeto.lp3.dao.LoginDAO;
+import ifsp.projeto.lp3.model.Administrador;
+import ifsp.projeto.lp3.model.Funcionario;
+import ifsp.projeto.lp3.model.UsuarioInterface;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -56,12 +59,21 @@ public class LoginController {
   @FXML
   void consultaUsuario(ActionEvent event) {
     
-    LoginDAO usuario = new LoginDAO();
-    if(usuario.logar(tf_login.getText(), tf_senha.getText())){
+    UsuarioInterface usuario;
+
+    if(tf_login.getText().contains("@adm")){
+      usuario = new Administrador(tf_login.getText(), tf_senha.getText());
+    }
+    else{
+     usuario = new Funcionario(tf_login.getText(), tf_senha.getText());
+    }
+
+    LoginDAO loginDAO = new LoginDAO();
+    
+    if(loginDAO.logar(usuario)){
         App.trocaTela("menu");
     }
     else{
-
         final Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Erro ao efetuar login!");
         alert.setHeaderText("Login Inválido!");

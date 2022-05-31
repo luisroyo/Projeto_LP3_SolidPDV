@@ -7,6 +7,9 @@ public abstract class Usuario {
     protected String senha;
     
     
+    public Usuario() {
+    }
+
     public Usuario(String login, String senha) {
         this.login = login;
         this.senha = senha;

@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="form_menu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="327.0" prefWidth="251.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ifsp.projeto.lp3.controller.MenuController">
+<AnchorPane fx:id="form_menu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="310.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ifsp.projeto.lp3.controller.MenuController">
    <children>
       <MenuBar layoutY="5.0" prefHeight="25.0" prefWidth="940.0" AnchorPane.bottomAnchor="563.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0">
         <menus>
@@ -47,32 +47,32 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Button layoutX="10.0" layoutY="37.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" text="Venda">
+      <Button fx:id="btn_telaUsuario" layoutX="191.0" layoutY="216.0" mnemonicParsing="false" onAction="#abreTelaUsuario" prefHeight="80.0" prefWidth="150.0" text="Usuário" AnchorPane.rightAnchor="15.0">
          <font>
             <Font name="Arial Black" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="119.0" layoutY="228.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" text="Venda">
+      <Button fx:id="btn_telaRelatorio" layoutX="191.0" layoutY="128.0" mnemonicParsing="false" onAction="#abreTelaRelatorio" prefHeight="80.0" prefWidth="150.0" text="Relatório" AnchorPane.rightAnchor="15.0">
          <font>
             <Font name="Arial Black" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="10.0" layoutY="228.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" text="Clientes">
+      <Button fx:id="btn_telaCliente" layoutX="14.0" layoutY="128.0" mnemonicParsing="false" onAction="#abreTelaCliente" prefHeight="80.0" prefWidth="150.0" text="Clientes">
          <font>
             <Font name="Arial Black" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="119.0" layoutY="132.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" text="Venda">
+      <Button fx:id="btn_telaVenda" layoutX="14.0" layoutY="37.0" mnemonicParsing="false" onAction="#abreTelaVenda" prefHeight="80.0" prefWidth="150.0" text="Venda" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="186.0">
          <font>
             <Font name="Arial Black" size="15.0" />
          </font>
       </Button>
-      <Button fx:id="btn_telaProduto" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="132.0" mnemonicParsing="false" onAction="#abreTelaCadProduto" prefHeight="85.0" prefWidth="85.0" text=" Produto" textAlignment="CENTER">
+      <Button fx:id="btn_telaProduto" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="216.0" mnemonicParsing="false" onAction="#abreTelaProduto" prefHeight="80.0" prefWidth="150.0" text=" Produto" textAlignment="CENTER">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="119.0" layoutY="37.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" text="Fornecedores">
+      <Button fx:id="btn_telaFornecedores" layoutX="191.0" layoutY="37.0" mnemonicParsing="false" onAction="#abreTelaFornecedor" prefHeight="80.0" prefWidth="150.0" text="Fornecedores" AnchorPane.rightAnchor="15.0">
          <font>
             <Font name="Arial Black" size="15.0" />
          </font>

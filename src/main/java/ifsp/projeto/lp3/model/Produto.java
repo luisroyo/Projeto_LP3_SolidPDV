@@ -9,6 +9,9 @@ public class Produto {
     private Integer quantidadeEstoque;
     private String categoria;
 
+    public Produto() {
+    }
+
     public Produto(String codigoBarra, String nome, Double precoCusto, Double precoVenda, Integer quantidadeEstoque,
             String categoria) {
 

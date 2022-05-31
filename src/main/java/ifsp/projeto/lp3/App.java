@@ -12,22 +12,22 @@ public class App extends Application {
   private static Stage stage;
   private static Scene telaLogin;
   private static Scene telaMenu;
-  private static Scene telaCadastroUsuario;
-  private static Scene telaCadastroProduto;
+  private static Scene telaUsuario;
+  private static Scene telaProduto;
 
   @Override
   public void start(Stage primaryStage) throws IOException {
     FXMLLoader fxmlLogin = new FXMLLoader(
-      getClass().getResource("view/telaLogin.fxml")
+      getClass().getResource("view/Login.fxml")
     );
     FXMLLoader fxmlMenu = new FXMLLoader(
-      getClass().getResource("view/telaMenu.fxml")
+      getClass().getResource("view/Menu.fxml")
     );
     FXMLLoader fxmlUsuario = new FXMLLoader(
-      getClass().getResource("view/telaCadastroUsuario.fxml")
+      getClass().getResource("view/Usuario.fxml")
     );
     FXMLLoader fxmlProduto = new FXMLLoader(
-      getClass().getResource("view/telaCadastroProduto.fxml")
+      getClass().getResource("view/Produto.fxml")
     );
 
     stage = primaryStage;
@@ -40,8 +40,8 @@ public class App extends Application {
 
     telaLogin = new Scene(parentLogin, 510, 285);
     telaMenu = new Scene(parentMenu, 600, 400);
-    telaCadastroUsuario = new Scene(parentUsuario, 415, 400);
-    telaCadastroProduto = new Scene(parentProduto, 525, 375);
+   telaUsuario = new Scene(parentUsuario, 415, 400);
+    telaProduto = new Scene(parentProduto, 800, 600);
 
     primaryStage.setScene(telaLogin);
     primaryStage.show();
@@ -55,11 +55,11 @@ public class App extends Application {
       case "menu":
         stage.setScene(telaMenu);
         break;
-      case "novo":
-        stage.setScene(telaCadastroUsuario);
+      case "usuario":
+        stage.setScene (telaUsuario);
         break;
       case "produto":
-        stage.setScene(telaCadastroProduto);
+        stage.setScene(telaProduto);
         break;
     }
   }

@@ -1,25 +1,20 @@
 package ifsp.projeto.lp3.dao;
 
 import java.sql.*;
-
 import ifsp.projeto.lp3.model.Administrador;
 import ifsp.projeto.lp3.model.Funcionario;
 import ifsp.projeto.lp3.model.UsuarioInterface;
-import ifsp.projeto.lp3.utils.Mensagem;
-
+import ifsp.projeto.lp3.utils.Metodos;
 public class LoginDAO {
-
-
+  ResultSet rs = null;
+  PreparedStatement pst = null;
+  Connection conn = Conexao.getConexao();
 
   public boolean logar(UsuarioInterface usuario) {
-    Mensagem msg = new Mensagem();
-    
-    Connection conn = Conexao.getConexao();
+    Metodos msg = new Metodos();    
+    conn = Conexao.getConexao();
 
-    try {
-      ResultSet rs = null;
-      PreparedStatement pst = null;
-
+    try { 
       if(usuario instanceof Administrador){
         Administrador adm = (Administrador) usuario;
         pst =conn.prepareStatement("select * from tb_usuario where login=? and senha=?");

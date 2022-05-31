@@ -1,8 +1,9 @@
 package ifsp.projeto.lp3.utils;
 
+
 import javafx.scene.control.Alert;
 
-public class Mensagem {
+public class Metodos {
     
     //CADASTRO DE PRODUTO
     public void cadastroProdutoSucesso(){
@@ -23,7 +24,6 @@ public class Mensagem {
         alert.showAndWait();
     }
 
-
     //LOGIN USUARIO
 
     public void logadoUsuarioComum(){
@@ -38,6 +38,23 @@ public class Mensagem {
         final Alert alert = new Alert(Alert.AlertType.INFORMATION);
         // alert.setTitle("Logado com sucesso!");
         alert.setHeaderText("Usuário Administrativo!");
+        // alert.setContentText("Usuário ou senha Inválido!");
+        alert.setResizable(true);
+        alert.showAndWait();
+    }
+
+    //Limpa campos textField 
+
+    public void limpaCadProduto(){
+        
+        
+    }
+    // MENSAGEM DE ERRO BUSCA PRODUTOS
+
+    public void erroBuscaProduto(){
+        final Alert alert = new Alert(Alert.AlertType.ERROR);
+        // alert.setTitle("Logado com sucesso!");
+        alert.setHeaderText("Erro ao buscar produto");
         // alert.setContentText("Usuário ou senha Inválido!");
         alert.setResizable(true);
         alert.showAndWait();

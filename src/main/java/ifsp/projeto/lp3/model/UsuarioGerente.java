@@ -1,18 +1,19 @@
 package ifsp.projeto.lp3.model;
-
-
-
-public class Administrador extends Usuario implements UsuarioInterface {
+public class UsuarioGerente extends Usuario implements UsuarioInterface {
 
    private String cnpj;
 
+public UsuarioGerente(String nome, String login, String senha, String telefone, String cnpj) {
+    super(nome, login, senha, telefone);
+    this.cnpj = cnpj;
+}
 
-public Administrador(String nome, String login, String senha, String cnpj) {
+public UsuarioGerente(String nome, String login, String senha, String cnpj) {
     super(nome, login, senha);
     this.cnpj = cnpj;
 }
 
-public Administrador( String login, String senha) {
+public UsuarioGerente( String login, String senha) {
     super( login, senha);
     this.login = login;
     this.senha = senha;    
@@ -25,8 +26,6 @@ public String getCnpj() {
 public void setCnpj(String cnpj) {
     this.cnpj = cnpj;
 }
-
-
 
 @Override
 public void cadastarUsuario(UsuarioInterface usuario) {

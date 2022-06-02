@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="tela_login" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="285.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ifsp.projeto.lp3.controller.LoginController">
+<AnchorPane fx:id="tela_login" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="284.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ifsp.projeto.lp3.controller.LoginController">
    <children>
       <Label layoutX="72.0" layoutY="57.0" text="Login:">
          <font>
@@ -19,7 +19,7 @@
             <Font name="Arial Black" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="tf_login" layoutX="72.0" layoutY="75.0" prefHeight="35.0" prefWidth="365.0" />
+      <TextField fx:id="txt_login" layoutX="72.0" layoutY="75.0" prefHeight="35.0" prefWidth="365.0" />
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="175.0" layoutY="14.0" prefHeight="45.0" prefWidth="500.0" style="-fx-background-color: #000000; -fx-font-weight: bold; -fx-font-style: italic;" text="SOLID PDV" textFill="RED" AnchorPane.bottomAnchor="236.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <font>
             <Font name="Arial Black" size="25.0" />
@@ -40,12 +40,7 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <Button fx:id="btn_novoCadastro" layoutX="72.0" layoutY="222.0" mnemonicParsing="false" onAction="#novoCadastro" prefHeight="35.0" prefWidth="365.0" text="Novo">
-         <font>
-            <Font name="Arial Black" size="12.0" />
-         </font>
-      </Button>
-      <PasswordField fx:id="tf_senha" layoutX="72.0" layoutY="130.0" prefHeight="35.0" prefWidth="365.0" />
+      <PasswordField fx:id="txt_senha" layoutX="72.0" layoutY="130.0" prefHeight="35.0" prefWidth="365.0" />
       <Label fx:id="lbl_status" layoutX="10.0" layoutY="263.0" text="Não conectado!" />
    </children>
 </AnchorPane>

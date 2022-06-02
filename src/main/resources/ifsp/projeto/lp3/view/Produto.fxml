@@ -10,13 +10,13 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="telaCadastroProduto" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ifsp.projeto.lp3.controller.ProdutoController">
+<AnchorPane fx:id="telaCadastroProduto" prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ifsp.projeto.lp3.controller.ProdutoController">
    <children>
-      <TextField fx:id="tf_codBarra" layoutX="69.0" layoutY="60.0" />
+      <TextField fx:id="txt_codBarra" layoutX="69.0" layoutY="60.0" />
       <Label layoutX="69.0" layoutY="43.0" text="Codigo de Barra" />
-      <TextField fx:id="tf_descricao" layoutX="69.0" layoutY="113.0" prefHeight="25.0" prefWidth="578.0" />
+      <TextField fx:id="txt_descricao" layoutX="69.0" layoutY="113.0" prefHeight="25.0" prefWidth="578.0" />
       <Label layoutX="69.0" layoutY="96.0" text="Descrição" />
-      <TextField fx:id="tf_valorCusto" layoutX="69.0" layoutY="175.0" />
+      <TextField fx:id="txt_valorCusto" layoutX="69.0" layoutY="175.0" />
       <Label layoutX="69.0" layoutY="158.0" text="Valor Custo" />
       <MenuBar prefHeight="25.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
@@ -40,17 +40,17 @@
           </Menu>
         </menus>
       </MenuBar>
-      <TextField fx:id="tf_valorVenda" layoutX="300.0" layoutY="175.0" />
+      <TextField fx:id="txt_valorVenda" layoutX="300.0" layoutY="175.0" />
       <Label layoutX="300.0" layoutY="158.0" text="Valor Venda" />
-      <TextField fx:id="tf_categoria" layoutX="69.0" layoutY="251.0" />
+      <TextField fx:id="txt_categoria" layoutX="69.0" layoutY="251.0" />
       <Label layoutX="69.0" layoutY="234.0" text="Categoria" />
-      <TextField fx:id="tf_estoque" layoutX="300.0" layoutY="251.0" />
+      <TextField fx:id="txt_estoque" layoutX="300.0" layoutY="251.0" />
       <Label layoutX="302.0" layoutY="234.0" text="Qtd Estoque" />
       <Button fx:id="btn_cadastrarProduto" layoutX="69.0" layoutY="315.0" mnemonicParsing="false" onAction="#cadastraProduto" text="Cadastrar" />
-      <Button fx:id="btn_buscarProduto" layoutX="151.0" layoutY="315.0" mnemonicParsing="false" onAction="#buscaProduto" prefHeight="25.0" prefWidth="67.0" text="Buscar" />
+      <Button fx:id="btn_listaProduto" layoutX="151.0" layoutY="315.0" mnemonicParsing="false" onAction="#listaProdutos" prefHeight="25.0" prefWidth="67.0" text="Listar" />
       <Button fx:id="btn_editarProduto" layoutX="299.0" layoutY="316.0" mnemonicParsing="false" onAction="#editaProduto" prefHeight="25.0" prefWidth="67.0" text="Editar" />
       <Button fx:id="btn_excluirProduto" layoutX="380.0" layoutY="315.0" mnemonicParsing="false" onAction="#excluiProduto" prefHeight="25.0" prefWidth="67.0" text="Excluir" />
-      <TableView fx:id="tabela_produtos" layoutX="1.0" layoutY="341.0" prefHeight="250.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="350.0">
+      <TableView fx:id="tabela_produtos" editable="true" layoutX="1.0" layoutY="341.0" prefHeight="250.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="350.0">
         <columns>
           <TableColumn fx:id="col_codBarra" prefWidth="89.0" text="Cod Barra" />
           <TableColumn fx:id="col_descricao" prefWidth="260.0" text="Descrição" />
@@ -60,5 +60,6 @@
             <TableColumn fx:id="col_qtdEstoque" prefWidth="149.0" text="Qtd Estoque" />
         </columns>
       </TableView>
+      <Button fx:id="btn_buscaProduto" layoutX="235.0" layoutY="60.0" mnemonicParsing="false" onAction="#buscaProdutoPorCodBarra" prefHeight="25.0" prefWidth="67.0" text="Buscar" />
    </children>
 </AnchorPane>

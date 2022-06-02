@@ -1,62 +1,27 @@
 package ifsp.projeto.lp3.utils;
 
-
 import javafx.scene.control.Alert;
-
 public class Metodos {
     
-    //CADASTRO DE PRODUTO
-    public void cadastroProdutoSucesso(){
-        final Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Cadastro Realizado!");
-        alert.setHeaderText("Cadastro realizado com sucesso!");
-        // alert.setContentText("Usuário ou senha Inválido!");
-        alert.setResizable(true);
-        alert.showAndWait();
-    }
+        /// MENSAGEM DE ERRO
+      public void mensagemDeErro(String msg){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setContentText(msg);
+        alert.show();
+      }
 
-    public void cadastroProdutoNaoRealizado(){
-        final Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Cadastro não realizado!");
-        alert.setHeaderText("Cadastro não realizado!");
-        // alert.setContentText("Usuário ou senha Inválido!");
-        alert.setResizable(true);
-        alert.showAndWait();
-    }
+      /// MENSAGEM DE SUCESSO
+      public void mensagemDeSucesso(String msg){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setContentText(msg);
+        alert.show();
+      }
+      /// MENSAGEM DE CONFIRMAÇÃO 
 
-    //LOGIN USUARIO
+      public void mensagemDeConfirmacao(String msg){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setContentText(msg);
+        alert.show();
+      }
 
-    public void logadoUsuarioComum(){
-        final Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        // alert.setTitle("Logado com sucesso!");
-        alert.setHeaderText("Usuário Comum!");
-        // alert.setContentText("Usuário ou senha Inválido!");
-        alert.setResizable(true);
-        alert.showAndWait();
     }
-    public void logadoUsuarioAdm(){
-        final Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        // alert.setTitle("Logado com sucesso!");
-        alert.setHeaderText("Usuário Administrativo!");
-        // alert.setContentText("Usuário ou senha Inválido!");
-        alert.setResizable(true);
-        alert.showAndWait();
-    }
-
-    //Limpa campos textField 
-
-    public void limpaCadProduto(){
-        
-        
-    }
-    // MENSAGEM DE ERRO BUSCA PRODUTOS
-
-    public void erroBuscaProduto(){
-        final Alert alert = new Alert(Alert.AlertType.ERROR);
-        // alert.setTitle("Logado com sucesso!");
-        alert.setHeaderText("Erro ao buscar produto");
-        // alert.setContentText("Usuário ou senha Inválido!");
-        alert.setResizable(true);
-        alert.showAndWait();
-    }
-}

@@ -1,81 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="form_menu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="310.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ifsp.projeto.lp3.controller.MenuController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ifsp.projeto.lp3.controller.MenuController">
    <children>
-      <MenuBar layoutY="5.0" prefHeight="25.0" prefWidth="940.0" AnchorPane.bottomAnchor="563.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0">
+      <MenuBar>
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="Cadastro">
             <items>
-              <MenuItem mnemonicParsing="false" text="Produtos" />
+              <MenuItem fx:id="menuItem_cadastroProdutos" mnemonicParsing="false" onAction="#abriTelaProduto" text="Produtos" />
+                  <MenuItem fx:id="menuItem_CadastroUsuario" mnemonicParsing="false" onAction="#abriTelaUsuario" text="Usuários" />
+                  <MenuItem fx:id="menuItem_cadastroFornecedores" mnemonicParsing="false" onAction="#abriTelaFornecedores" text="Fornecedores" />
+                  <MenuItem fx:id="menuItem_cadastroCategoria" mnemonicParsing="false" onAction="#abriTelaCategoria" text="Categoria" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" text="Processos">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+              <MenuItem fx:id="menuItem_processosVendas" mnemonicParsing="false" onAction="#abriTelaDeVendas" text="Vendas" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Help">
+          <Menu mnemonicParsing="false" text="Gráficos">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem fx:id="menuItem_graficosMensal" mnemonicParsing="false" text="Venda Mensal" />
             </items>
           </Menu>
+            <Menu mnemonicParsing="false" text="Relatorios">
+               <items>
+                  <MenuItem fx:id="menuItem_relatoriosValorTotalEstoque" mnemonicParsing="false" text="Valor Total Estoque" />
+                  <MenuItem fx:id="menuItem_relatoriosValorTotalPorCategoria" mnemonicParsing="false" text="Valor Total por Categoria" />
+               </items>
+            </Menu>
         </menus>
       </MenuBar>
-      <MenuBar layoutX="-158.0" layoutY="-34.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <Button fx:id="btn_telaUsuario" layoutX="191.0" layoutY="216.0" mnemonicParsing="false" onAction="#abreTelaUsuario" prefHeight="80.0" prefWidth="150.0" text="Usuário" AnchorPane.rightAnchor="15.0">
-         <font>
-            <Font name="Arial Black" size="15.0" />
-         </font>
-      </Button>
-      <Button fx:id="btn_telaRelatorio" layoutX="191.0" layoutY="128.0" mnemonicParsing="false" onAction="#abreTelaRelatorio" prefHeight="80.0" prefWidth="150.0" text="Relatório" AnchorPane.rightAnchor="15.0">
-         <font>
-            <Font name="Arial Black" size="15.0" />
-         </font>
-      </Button>
-      <Button fx:id="btn_telaCliente" layoutX="14.0" layoutY="128.0" mnemonicParsing="false" onAction="#abreTelaCliente" prefHeight="80.0" prefWidth="150.0" text="Clientes">
-         <font>
-            <Font name="Arial Black" size="15.0" />
-         </font>
-      </Button>
-      <Button fx:id="btn_telaVenda" layoutX="14.0" layoutY="37.0" mnemonicParsing="false" onAction="#abreTelaVenda" prefHeight="80.0" prefWidth="150.0" text="Venda" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="186.0">
-         <font>
-            <Font name="Arial Black" size="15.0" />
-         </font>
-      </Button>
-      <Button fx:id="btn_telaProduto" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="216.0" mnemonicParsing="false" onAction="#abreTelaProduto" prefHeight="80.0" prefWidth="150.0" text=" Produto" textAlignment="CENTER">
-         <font>
-            <Font name="Arial Black" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="btn_telaFornecedores" layoutX="191.0" layoutY="37.0" mnemonicParsing="false" onAction="#abreTelaFornecedor" prefHeight="80.0" prefWidth="150.0" text="Fornecedores" AnchorPane.rightAnchor="15.0">
-         <font>
-            <Font name="Arial Black" size="15.0" />
-         </font>
-      </Button>
+      <AnchorPane fx:id="anchorPane" prefHeight="600" prefWidth="800" />
    </children>
-</AnchorPane>
+</VBox>

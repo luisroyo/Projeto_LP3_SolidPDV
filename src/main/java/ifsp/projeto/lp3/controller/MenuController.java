@@ -1,62 +1,81 @@
 package ifsp.projeto.lp3.controller;
 
-import ifsp.projeto.lp3.App;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
-
-public class MenuController {
-
-    @FXML
-    private Button btn_telaCliente;
+public class MenuController implements Initializable{
 
     @FXML
-    private Button btn_telaFornecedores;
+    private AnchorPane anchorPane;
+    
+    @FXML
+    private MenuItem menuItem_CadastroUsuario;
 
     @FXML
-    private Button btn_telaProduto;
+    private MenuItem menuItem_cadastroCategoria;
 
     @FXML
-    private Button btn_telaRelatorio;
+    private MenuItem menuItem_cadastroCliente;
 
     @FXML
-    private Button btn_telaUsuario;
+    private MenuItem menuItem_cadastroFornecedores;
 
     @FXML
-    private Button btn_telaVenda;
+    private MenuItem menuItem_cadastroProdutos;
 
     @FXML
-    private AnchorPane form_menu;
+    private MenuItem menuItem_graficosMensal;
 
     @FXML
-    void abreTelaCliente(ActionEvent event) {
+    private MenuItem menuItem_processosVendas;
+
+    @FXML
+    private MenuItem menuItem_relatoriosValorTotalEstoque;
+
+    @FXML
+    private MenuItem menuItem_relatoriosValorTotalPorCategoria;
+
+    @FXML
+    void abriTelaDeVendas(ActionEvent event) {
 
     }
 
     @FXML
-    void abreTelaFornecedor(ActionEvent event) {
+    void abriTelaCategoria(ActionEvent event) {
 
     }
 
     @FXML
-    void abreTelaProduto(ActionEvent event) {
-        App.trocaTela("produto");
-    }
-
-    @FXML
-    void abreTelaRelatorio(ActionEvent event) {
+    void abriTelaFornecedores(ActionEvent event) throws IOException{
 
     }
 
     @FXML
-    void abreTelaUsuario(ActionEvent event) {
-
+    void abriTelaUsuario(ActionEvent event) throws IOException {
+        AnchorPane telaCadastroUsuario =(AnchorPane) 
+        FXMLLoader.load(getClass().getResource("/ifsp/projeto/lp3/view/Usuario.fxml"));
+        anchorPane.getChildren().setAll(telaCadastroUsuario); 
     }
+
 
     @FXML
-    void abreTelaVenda(ActionEvent event) {
-
+    void abriTelaProduto(ActionEvent event) throws IOException {          
+        AnchorPane telaCadPro =(AnchorPane) 
+        FXMLLoader.load(getClass().getResource("/ifsp/projeto/lp3/view/Produto.fxml"));
+        anchorPane.getChildren().setAll(telaCadPro);            
     }
 
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {        
+      
+        
+    }   
 }

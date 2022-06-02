@@ -1,6 +1,7 @@
 package ifsp.projeto.lp3;
 
 import java.io.IOException;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,8 +13,7 @@ public class App extends Application {
   private static Stage stage;
   private static Scene telaLogin;
   private static Scene telaMenu;
-  private static Scene telaUsuario;
-  private static Scene telaProduto;
+  private static Scene telaUsuario;  
 
   @Override
   public void start(Stage primaryStage) throws IOException {
@@ -26,22 +26,20 @@ public class App extends Application {
     FXMLLoader fxmlUsuario = new FXMLLoader(
       getClass().getResource("view/Usuario.fxml")
     );
-    FXMLLoader fxmlProduto = new FXMLLoader(
-      getClass().getResource("view/Produto.fxml")
-    );
-
+   
     stage = primaryStage;
     stage.setTitle("SolidPDV");
+    
 
     Parent parentLogin = fxmlLogin.load();
     Parent parentMenu = fxmlMenu.load();
     Parent parentUsuario = fxmlUsuario.load();
-    Parent parentProduto = fxmlProduto.load();
+    
 
     telaLogin = new Scene(parentLogin, 510, 285);
     telaMenu = new Scene(parentMenu, 600, 400);
-   telaUsuario = new Scene(parentUsuario, 415, 400);
-    telaProduto = new Scene(parentProduto, 800, 600);
+    telaUsuario = new Scene(parentUsuario, 415, 400);
+   
 
     primaryStage.setScene(telaLogin);
     primaryStage.show();
@@ -56,11 +54,8 @@ public class App extends Application {
         stage.setScene(telaMenu);
         break;
       case "usuario":
-        stage.setScene (telaUsuario);
-        break;
-      case "produto":
-        stage.setScene(telaProduto);
-        break;
+        stage.setScene(telaUsuario);
+        break;     
     }
   }
 

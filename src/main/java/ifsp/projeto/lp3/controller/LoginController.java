@@ -1,24 +1,21 @@
 package ifsp.projeto.lp3.controller;
 
 import ifsp.projeto.lp3.App;
-import ifsp.projeto.lp3.dao.LoginDAO;
-import ifsp.projeto.lp3.model.Administrador;
-import ifsp.projeto.lp3.model.Funcionario;
+import ifsp.projeto.lp3.dao.UsuarioDAO;
+import ifsp.projeto.lp3.model.UsuarioGerente;
+import ifsp.projeto.lp3.model.UsuarioCaixa;
 import ifsp.projeto.lp3.model.UsuarioInterface;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.net.URL;
+import java.sql.*;
+import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.fxml.*;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 
-public class LoginController {
+public class LoginController implements Initializable{
 
   Connection conexao = null;
   PreparedStatement pst = null;
@@ -40,20 +37,19 @@ public class LoginController {
   private Button btn_sairLogin;
 
   @FXML
-  private TextField tf_login;
+  private TextField txt_login;
 
   @FXML
-  private TextField tf_senha;
+  private TextField txt_senha;
 
   @FXML
-  private Label lb_senhaInvalida;
+  private Label lbl_senhaInvalida;
 
   @FXML
   private AnchorPane tela_login;
 
   @FXML
-  void novoCadastro(ActionEvent event) {
-    App.trocaTela("novo");
+  void novoCadastro(ActionEvent event) {  
   }
 
   @FXML
@@ -61,16 +57,16 @@ public class LoginController {
     
     UsuarioInterface usuario;
 
-    if(tf_login.getText().contains("@adm")){
-      usuario = new Administrador(tf_login.getText(), tf_senha.getText());
+    if(txt_login.getText().contains("@adm")){
+      usuario = new UsuarioGerente(txt_login.getText(), txt_senha.getText());
     }
     else{
-     usuario = new Funcionario(tf_login.getText(), tf_senha.getText());
+     usuario = new UsuarioCaixa(txt_login.getText(), txt_senha.getText());
     }
 
-    LoginDAO loginDAO = new LoginDAO();
+    UsuarioDAO login = new UsuarioDAO();
     
-    if(loginDAO.logar(usuario)){
+    if(login.logar(usuario)){
         App.trocaTela("menu");
     }
     else{
@@ -85,4 +81,10 @@ public class LoginController {
 
   @FXML
   void sairLogin(ActionEvent event) {}
+
+  @Override
+  public void initialize(URL arg0, ResourceBundle arg1) {
+    
+    
+  }
 }

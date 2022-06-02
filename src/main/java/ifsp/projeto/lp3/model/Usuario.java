@@ -2,12 +2,16 @@ package ifsp.projeto.lp3.model;
 
 public abstract class Usuario {
     
+    private Integer id;
     private String nome;
     protected String login;
     protected String senha;
-    
-    
+    protected String telefone;
+       
     public Usuario() {
+    }
+    public Usuario(String nome){
+        this.nome = nome;
     }
 
     public Usuario(String login, String senha) {
@@ -20,7 +24,19 @@ public abstract class Usuario {
         this.login = login;
         this.senha = senha;
     }
+    public Usuario(String nome, String login, String senha, String telefone) {
+        this.nome = nome;
+        this.login = login;
+        this.senha = senha;
+        this.telefone = telefone;
+    }
 
+    public Integer getId() {
+        return id;
+    }
+    public void setId(Integer id) {
+        this.id = id;
+    }
     public String getLogin() {
         return login;
     }
@@ -48,6 +64,13 @@ public abstract class Usuario {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }     
+    }   
+    
+    public String getTelefone() {
+        return telefone;
+    }
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
 
 }

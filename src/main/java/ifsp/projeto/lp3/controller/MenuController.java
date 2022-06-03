@@ -3,6 +3,7 @@ package ifsp.projeto.lp3.controller;
 
 import java.io.IOException;
 import java.net.URL;
+ 
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -12,6 +13,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
 public class MenuController implements Initializable{
+
+    private final String path = "/ifsp/projeto/lp3/view/";
 
     @FXML
     private AnchorPane anchorPane;
@@ -44,12 +47,12 @@ public class MenuController implements Initializable{
     private MenuItem menuItem_relatoriosValorTotalPorCategoria;
 
     @FXML
-    void abriTelaDeVendas(ActionEvent event) {
+    void abriTelaDeVendas(ActionEvent event) throws IOException{
 
     }
 
     @FXML
-    void abriTelaCategoria(ActionEvent event) {
+    void abriTelaCategoria(ActionEvent event) throws IOException{
 
     }
 
@@ -60,17 +63,12 @@ public class MenuController implements Initializable{
 
     @FXML
     void abriTelaUsuario(ActionEvent event) throws IOException {
-        AnchorPane telaCadastroUsuario =(AnchorPane) 
-        FXMLLoader.load(getClass().getResource("/ifsp/projeto/lp3/view/Usuario.fxml"));
-        anchorPane.getChildren().setAll(telaCadastroUsuario); 
+        abriTela("Usuario.fxml");
     }
-
 
     @FXML
     void abriTelaProduto(ActionEvent event) throws IOException {          
-        AnchorPane telaCadPro =(AnchorPane) 
-        FXMLLoader.load(getClass().getResource("/ifsp/projeto/lp3/view/Produto.fxml"));
-        anchorPane.getChildren().setAll(telaCadPro);            
+        abriTela("Produto.fxml");
     }
 
     @Override
@@ -78,4 +76,14 @@ public class MenuController implements Initializable{
       
         
     }   
+
+
+    private void abriTela(String nomePagina) throws IOException{
+
+        AnchorPane pane =(AnchorPane) 
+        FXMLLoader.load(getClass().getResource(path.concat(nomePagina)));
+        anchorPane.getChildren().setAll(pane);
+    }
+
+
 }

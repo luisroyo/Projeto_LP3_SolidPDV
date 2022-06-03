@@ -1,28 +1,38 @@
 package ifsp.projeto.lp3.controller;
 
-import ifsp.projeto.lp3.App;
-import ifsp.projeto.lp3.dao.UsuarioDAO;
-import ifsp.projeto.lp3.model.UsuarioGerente;
-import ifsp.projeto.lp3.model.UsuarioCaixa;
-import ifsp.projeto.lp3.model.UsuarioInterface;
+import ifsp.projeto.lp3.model.Funcionario;
+import ifsp.projeto.lp3.model.Usuario;
+import ifsp.projeto.lp3.model.Administrador;
 
+import ifsp.projeto.lp3.utils.Metodos;
+import java.io.IOException;
 import java.net.URL;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ResourceBundle;
-
 import javafx.event.ActionEvent;
-import javafx.fxml.*;
-import javafx.scene.control.*;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+public class LoginController implements Initializable {
 
-public class LoginController implements Initializable{
-
+  Metodos msg = new Metodos();
   Connection conexao = null;
   PreparedStatement pst = null;
   ResultSet rs = null;
 
   String usuario;
-  String senha; 
+  String senha;
+
+  @FXML
+  private AnchorPane anchorPane;
 
   @FXML
   private Button btn_novoCadastro;
@@ -49,33 +59,27 @@ public class LoginController implements Initializable{
   private AnchorPane tela_login;
 
   @FXML
-  void novoCadastro(ActionEvent event) {  
-  }
+  void novoCadastro(ActionEvent event) {}
 
   @FXML
-  void consultaUsuario(ActionEvent event) {
-    
-    UsuarioInterface usuario;
+  void consultaUsuario(ActionEvent event) throws IOException {
+    Usuario usuario;
+    if (txt_login.getText().contains("@adm")) {
+      usuario = new Administrador(txt_login.getText(), txt_senha.getText());
+    } else {
+      usuario = new Funcionario(txt_login.getText(), txt_senha.getText());
+    }    
 
-    if(txt_login.getText().contains("@adm")){
-      usuario = new UsuarioGerente(txt_login.getText(), txt_senha.getText());
-    }
-    else{
-     usuario = new UsuarioCaixa(txt_login.getText(), txt_senha.getText());
-    }
-
-    UsuarioDAO login = new UsuarioDAO();
-    
-    if(login.logar(usuario)){
-        App.trocaTela("menu");
-    }
-    else{
-        final Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Erro ao efetuar login!");
-        alert.setHeaderText("Login Inválido!");
-        alert.setContentText("Usuário ou senha Inválido!");
-        alert.setResizable(true);
-        alert.showAndWait();
+    if (usuario.login(txt_login.getText(),txt_senha.getText())) {
+            
+      Stage stage = (Stage) btn_okLogin.getScene().getWindow();
+      FXMLLoader root = new FXMLLoader(LoginController.class.getResource("/ifsp/projeto/lp3/view/Menu.fxml"));
+      Scene scene = new Scene(root.load());
+      stage.setScene(scene);
+      stage.setTitle("Tela Inicial");
+      stage.show();
+    } else {
+     msg.mensagemDeErro("Usuário ou senha inválidos!");
     }
   }
 
@@ -83,8 +87,5 @@ public class LoginController implements Initializable{
   void sairLogin(ActionEvent event) {}
 
   @Override
-  public void initialize(URL arg0, ResourceBundle arg1) {
-    
-    
-  }
+  public void initialize(URL arg0, ResourceBundle arg1) {}
 }

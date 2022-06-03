@@ -1,65 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="telaCadastroProduto" prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ifsp.projeto.lp3.controller.ProdutoController">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ifsp.projeto.lp3.controller.ProdutoController">
    <children>
-      <TextField fx:id="txt_codBarra" layoutX="69.0" layoutY="60.0" />
-      <Label layoutX="69.0" layoutY="43.0" text="Codigo de Barra" />
-      <TextField fx:id="txt_descricao" layoutX="69.0" layoutY="113.0" prefHeight="25.0" prefWidth="578.0" />
-      <Label layoutX="69.0" layoutY="96.0" text="Descrição" />
-      <TextField fx:id="txt_valorCusto" layoutX="69.0" layoutY="175.0" />
-      <Label layoutX="69.0" layoutY="158.0" text="Valor Custo" />
-      <MenuBar prefHeight="25.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="Cadastro">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Usuário" />
-                  <MenuItem mnemonicParsing="false" text="Produto" />
-                  <MenuItem mnemonicParsing="false" text="Fornecedores" />
-                  <MenuItem mnemonicParsing="false" text="Clientes" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <TextField fx:id="txt_valorVenda" layoutX="300.0" layoutY="175.0" />
-      <Label layoutX="300.0" layoutY="158.0" text="Valor Venda" />
-      <TextField fx:id="txt_categoria" layoutX="69.0" layoutY="251.0" />
-      <Label layoutX="69.0" layoutY="234.0" text="Categoria" />
-      <TextField fx:id="txt_estoque" layoutX="300.0" layoutY="251.0" />
-      <Label layoutX="302.0" layoutY="234.0" text="Qtd Estoque" />
-      <Button fx:id="btn_cadastrarProduto" layoutX="69.0" layoutY="315.0" mnemonicParsing="false" onAction="#cadastraProduto" text="Cadastrar" />
-      <Button fx:id="btn_listaProduto" layoutX="151.0" layoutY="315.0" mnemonicParsing="false" onAction="#listaProdutos" prefHeight="25.0" prefWidth="67.0" text="Listar" />
-      <Button fx:id="btn_editarProduto" layoutX="299.0" layoutY="316.0" mnemonicParsing="false" onAction="#editaProduto" prefHeight="25.0" prefWidth="67.0" text="Editar" />
-      <Button fx:id="btn_excluirProduto" layoutX="380.0" layoutY="315.0" mnemonicParsing="false" onAction="#excluiProduto" prefHeight="25.0" prefWidth="67.0" text="Excluir" />
-      <TableView fx:id="tabela_produtos" editable="true" layoutX="1.0" layoutY="341.0" prefHeight="250.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="350.0">
-        <columns>
-          <TableColumn fx:id="col_codBarra" prefWidth="89.0" text="Cod Barra" />
-          <TableColumn fx:id="col_descricao" prefWidth="260.0" text="Descrição" />
-            <TableColumn fx:id="col_valorCusto" prefWidth="101.0" text="Valor Custo" />
-            <TableColumn fx:id="col_valorVenda" prefWidth="93.0" text="Valor Venda" />
-            <TableColumn fx:id="col_valorCategoria" prefWidth="106.0" text="Categoria" />
-            <TableColumn fx:id="col_qtdEstoque" prefWidth="149.0" text="Qtd Estoque" />
-        </columns>
-      </TableView>
-      <Button fx:id="btn_buscaProduto" layoutX="235.0" layoutY="60.0" mnemonicParsing="false" onAction="#buscaProdutoPorCodBarra" prefHeight="25.0" prefWidth="67.0" text="Buscar" />
+      <SplitPane dividerPositions="0.4398496240601504" layoutX="139.0" layoutY="38.0" orientation="VERTICAL" prefHeight="700.0" prefWidth="734.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="399.0" prefWidth="798.0">
+               <children>
+                  <Group layoutX="75.0" layoutY="45.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0">
+                     <children>
+                        <TextField fx:id="txt_codBarra" layoutY="15.0" prefHeight="25.0" prefWidth="263.0" />
+                        <Label layoutX="1.0" text="Codigo de Barra:">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txt_descricao" layoutY="82.0" prefHeight="25.0" prefWidth="578.0" />
+                        <Label layoutX="1.0" layoutY="67.0" text="Descrição:">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txt_valorCusto" layoutY="144.0" prefHeight="25.0" prefWidth="181.0" />
+                        <TextField fx:id="txt_valorVenda" layoutX="225.0" layoutY="144.0" prefHeight="25.0" prefWidth="181.0" />
+                        <Label layoutX="225.0" layoutY="129.0" text="Valor Venda:">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txt_porcentagemLucro" layoutX="451.0" layoutY="144.0" prefHeight="25.0" prefWidth="127.0" />
+                        <Label layoutX="452.0" layoutY="127.0" text="\% lucro:">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txt_categoria" layoutY="204.0" prefHeight="25.0" prefWidth="181.0" />
+                        <Label layoutY="187.0" text="Categoria:">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txt_estoque" layoutX="225.0" layoutY="204.0" prefHeight="25.0" prefWidth="181.0" />
+                        <Label layoutX="226.0" layoutY="187.0" text="Qtd Estoque:">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Group>
+                  <Label alignment="CENTER_RIGHT" layoutX="286.0" layoutY="14.0" text="Detalhes do produto" AnchorPane.bottomAnchor="314.0" AnchorPane.leftAnchor="286.0" AnchorPane.rightAnchor="256.0" AnchorPane.topAnchor="15.0">
+                     <font>
+                        <Font name="Arial Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="76.0" layoutY="174.0" text="Valor Custo:">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Group layoutX="346.0" layoutY="300.0" AnchorPane.bottomAnchor="22.0" AnchorPane.rightAnchor="60.0">
+                     <children>
+                        <Button fx:id="btn_cadastrarProduto" mnemonicParsing="false" onAction="#cadastraProduto" text="Cadastrar" />
+                        <Button fx:id="btn_editarProduto" layoutX="116.0" mnemonicParsing="false" onAction="#editaProduto" prefHeight="25.0" prefWidth="67.0" text="Editar" />
+                        <Button fx:id="btn_excluirProduto" layoutX="225.0" mnemonicParsing="false" onAction="#excluiProduto" prefHeight="25.0" prefWidth="67.0" text="Excluir" />
+                     </children>
+                  </Group>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="302.0" prefWidth="798.0">
+               <children>
+                  <TableView fx:id="tabela_produtos" editable="true" layoutX="14.0" prefHeight="444.0" prefWidth="698.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <columns>
+                        <TableColumn fx:id="col_codBarra" prefWidth="106.0" text="Cod Barra" />
+                        <TableColumn fx:id="col_descricao" prefWidth="268.0" text="Descrição" />
+                        <TableColumn fx:id="col_valorVenda" prefWidth="119.0" text="Valor Venda" />
+                        <TableColumn fx:id="col_valorCategoria" minWidth="0.0" prefWidth="94.0" text="Categoria" />
+                        <TableColumn fx:id="col_qtdEstoque" prefWidth="108.0" text="Qtd Estoque" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
    </children>
 </AnchorPane>

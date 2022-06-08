@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ifsp.projeto.lp3.controller.MenuController">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ifsp.projeto.lp3.controller.MenuController">
    <children>
-      <MenuBar>
+      <MenuBar prefWidth="700.0">
         <menus>
           <Menu mnemonicParsing="false" text="Cadastro">
             <items>
@@ -36,6 +36,6 @@
             </Menu>
         </menus>
       </MenuBar>
-      <AnchorPane fx:id="anchorPane" prefHeight="800.0" prefWidth="700.0" />
+      <AnchorPane fx:id="anchorPane" prefHeight="748.0" prefWidth="700.0" />
    </children>
 </VBox>

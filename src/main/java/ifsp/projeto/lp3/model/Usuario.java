@@ -58,7 +58,6 @@ public abstract class Usuario {
     }
 
     public Usuario(Integer id, String nome) {
-
         this.nome = nome;
     }
 
@@ -77,15 +76,10 @@ public abstract class Usuario {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-
-
     public void cadastarUsuario(Usuario usuario) {
-
-
     }
 
     public boolean login(String login, String senha) {
-
         return false;
     }
 

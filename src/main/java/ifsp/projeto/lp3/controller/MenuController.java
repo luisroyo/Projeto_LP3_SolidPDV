@@ -48,7 +48,7 @@ public class MenuController implements Initializable{
 
     @FXML
     void abriTelaDeVendas(ActionEvent event) throws IOException{
-
+        abriTela("Venda.fxml");
     }
 
     @FXML
